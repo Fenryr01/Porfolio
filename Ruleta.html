@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Empresarial</title>
+    <link rel="icon" href="ico_luna_V3.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <main class="project-page">
+        <h1>Sistema de Dashboard Empresarial</h1>
+        
+        <!-- Enlaces importantes -->
+        <div class="button-group">
+            <a href="index.html" class="project-button">
+                <i class="fas fa-arrow-left"></i> Volver al Portfolio
+            </a>
+            <a href="https://tudashboard.com" target="_blank" class="project-button">
+                <i class="fas fa-external-link-alt"></i> Ver Proyecto en Vivo
+            </a>
+        </div>
+
+        <br><br>
+        <!-- Descripción -->
+        <h2>Descripción del Proyecto</h2>
+        <p>
+            Plataforma de analytics en tiempo real con visualización de datos empresariales. Desarrollada con arquitectura moderna y escalable, incluye:
+        </p>
+        <br>
+        <ul>
+            <li>Gráficos interactivos y personalizables</li>
+            <li>Tableros de control configurables</li>
+            <li>Exportación de reportes en múltiples formatos</li>
+            <li>Sistema de alertas inteligentes</li>
+        </ul>
+
+        <br><br>
+        <!-- Galería de imágenes -->
+        <h2>Galería del Proyecto</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/422/267/non_2x/wolf-silhouette-at-full-moon-design-vector.jpg" alt="Vista móvil">
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/022/422/261/small/wolf-silhouette-in-nature-design-vector.jpg" alt="Vista 2 del dashboard">
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.vecteezy.com/system/resources/previews/021/623/339/non_2x/wolf-outline-silhouette-vector.jpg" alt="Vista móvil">
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.vecteezy.com/system/resources/previews/021/623/261/non_2x/wolf-outline-silhouette-vector.jpg" alt="Panel de configuración">
+            </div>
+        </div>
+
+        <!-- Modal para imágenes en pantalla completa -->
+        <div class="modal">
+            <span class="modal-close">&times;</span>
+            <img src="" alt="Imagen en pantalla completa">
+        </div>
+
+        <br><br>
+        <!-- Tecnologías -->
+        <h2>Tecnologías Utilizadas</h2>
+        <div class="technologies">
+            <span class="technology-tag">React</span>
+            <span class="technology-tag">TypeScript</span>
+            <span class="technology-tag">Node.js</span>
+            <span class="technology-tag">MongoDB</span>
+            <span class="technology-tag">AWS</span>
+            <span class="technology-tag">D3.js</span>
+            <span class="technology-tag">Docker</span>
+            <span class="technology-tag">GraphQL</span>
+        </div>
+
+    </main>
+
+    <script>
+        const modal = document.querySelector('.modal');
+        const modalImg = modal.querySelector('img');
+        const closeModal = document.querySelector('.modal-close');
+
+        // Abrir modal al hacer clic en una imagen
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.getAttribute('src');
+                modal.classList.add('active');
+            });
+        });
+
+        // Cerrar modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Cerrar modal al hacer clic fuera de la imagen
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

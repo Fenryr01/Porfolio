@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirección de Accesibilidad</title>
+    <link rel="icon" href="ico_luna_V3.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <main class="project-page">
+        <h1>Dirección de Accesibilidad</h1>
+        
+        <!-- Enlaces importantes -->
+        <div class="button-group">
+            <a href="index.html" class="project-button">
+                <i class="fas fa-arrow-left"></i> Volver al Portfolio
+            </a>
+            <a href="https://hati-accesible.onrender.com/" target="_blank" class="project-button">
+                <i class="fas fa-external-link-alt"></i> Ver Proyecto en Vivo
+            </a>
+        </div>
+
+        <br><br>
+        <!-- Descripción -->
+        <h2>Descripción del Proyecto</h2>
+        <p>
+            El proyecto esta subido en Render, lo que demora unos 5 min aproximadamente en cargar la página.  
+            <br><br>
+            El proyecto es una página web diseñada para la Dirección de Accesibilidad de la ciudad de Dolores, con el propósito de mejorar la gestión y el acceso a la información relacionada con las personas con discapacidad en la comunidad. La plataforma incluye una sección informativa sobre la dirección y una página de contacto para facilitar la comunicación con los ciudadanos.
+            <br><br>
+            Una de las principales funciones del sistema es el registro de personas con discapacidad, el cual se complementa con un formulario detallado que los asistentes sociales completan durante sus visitas. Esta información permite mantener actualizados los datos de cada persona, evaluar su situación y generar gráficos estadísticos para la toma de decisiones y la planificación de políticas públicas.
+            <br><br>
+            Además, la plataforma cuenta con un panel de administración de usuarios, donde se pueden gestionar cuentas y asignar funciones según los roles dentro de la institución. También dispone de dos tablas avanzadas que permiten la búsqueda y filtrado de registros y formularios, facilitando la consulta y el análisis de la información recopilada.
+            <br><br>
+            Este proyecto busca optimizar la gestión de la Dirección de Accesibilidad, promoviendo una administración eficiente y un mejor seguimiento de las necesidades de las personas con discapacidad en la ciudad.
+            <br><br>
+        </p>
+        <h4> Incluye:</h4>
+        <ul>
+            <li><p>Página principal con noticias editables por el administrador</p></li>
+            <li><p>Información de contacto, redes y ubicación editables por el administrador.</p></li>
+            <li><p>Registro de personas con discapacidad</p></li>
+            <li><p>Formulario detallado de la situación de dichas personas dividido en datos personales, vivienda y salud.</p></li>
+            <li><p>Tablas de búsqueda para los datos de las distintas personas.</p></li>
+            <li><p>Descarga de PDF de los datos registrados.</p></li>
+            <li><p>Panel de administrador para crear o modificar los permisos de los usuarios. </p></li>
+            <li><p>Gráficos estadisticos</p></li>
+        </ul>
+
+        <br><br>
+        <!-- Galería de imágenes -->
+        <h2>Galería del Proyecto</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/GmRpn20/accesibilidad1.jpg" alt="accesibilidad1" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/tTGNhBPV/accesibilidad2.jpg" alt="accesibilidad2" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/pr39VCkG/accesibilidad3.jpg" alt="accesibilidad3" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/QvcmDsV7/accesibilidad4.jpg" alt="accesibilidad4" border="0">
+            </div>
+        </div>
+
+        <!-- Modal para imágenes en pantalla completa -->
+        <div class="modal">
+            <span class="modal-close">&times;</span>
+            <img src="" alt="Imagen en pantalla completa">
+        </div>
+
+        <br><br>
+        <!-- Tecnologías -->
+        <h2>Tecnologías Utilizadas</h2>
+        <div class="technologies">
+            <span class="skill-tag html"><i class="fab fa-html5"></i> HTML</span>
+            <span class="skill-tag css"><i class="fab fa-css3-alt"></i> CSS</span>
+            <span class="skill-tag js"><i class="fab fa-js"></i> JavaScript</span>
+            <span class="skill-tag php"><i class="fab fa-php"></i> PHP</span>
+            <span class="skill-tag mysql"><i class="fas fa-database"></i> MySQL</span>
+        </div>
+
+    </main>
+
+    <script>
+        const modal = document.querySelector('.modal');
+        const modalImg = modal.querySelector('img');
+        const closeModal = document.querySelector('.modal-close');
+
+        // Abrir modal al hacer clic en una imagen
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.getAttribute('src');
+                modal.classList.add('active');
+            });
+        });
+
+        // Cerrar modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Cerrar modal al hacer clic fuera de la imagen
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

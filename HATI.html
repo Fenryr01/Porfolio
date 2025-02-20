@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H.A.T.I.</title>
+    <link rel="icon" href="ico_luna_V3.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <main class="project-page">
+        <h1>H.A.T.I.</h1>
+        
+        <!-- Enlaces importantes -->
+        <div class="button-group">
+            <a href="index.html" class="project-button">
+                <i class="fas fa-arrow-left"></i> Volver al Portfolio
+            </a>
+            <a href="https://fenryr01.github.io/HATI/" target="_blank" class="project-button">
+                <i class="fas fa-external-link-alt"></i> Ver Proyecto en Vivo
+            </a>
+        </div>
+
+        <br><br>
+        <!-- Descripción -->
+        <h2>Descripción del Proyecto</h2>
+        <p>
+            Este proyecto es una versión estática subida a github (se quitaron las acciones correspondientes con la base de datos), puedes ingresar utilizando USUARIO: estudiantes CONTRASEÑA: 1234.
+            <br><br>
+            Este proyecto es una aplicación educativa diseñada para facilitar la enseñanza a través de la gamificación. Inspirada en Google Classroom, permite a los docentes crear clases y compartir contenido de manera interactiva. A diferencia de las plataformas tradicionales, en lugar de asignar tareas, los docentes pueden subir juegos relacionados con los temas de sus materias.
+            <br><br>
+            Actualmente, la aplicación cuenta con la modalidad de multiple choice, donde los estudiantes responden preguntas basadas en los contenidos impartidos. Sin embargo, el sistema está diseñado para expandirse y ofrecer nuevas dinámicas de juego en el futuro. Los docentes pueden personalizar los juegos según sus necesidades y hacerlos disponibles para sus alumnos.
+            <br><br>
+            Los estudiantes, por su parte, se unen a las clases creadas por sus docentes y pueden acceder a los juegos para reforzar los conocimientos de manera entretenida. Esto no solo fomenta el aprendizaje autónomo, sino que también motiva a los alumnos mediante el uso de elementos lúdicos en el proceso educativo.
+            <br><br>
+            Este proyecto busca innovar en la enseñanza, proporcionando a los docentes una herramienta flexible y a los alumnos una experiencia de aprendizaje más atractiva y efectiva. 
+        </p>
+        <br>
+        <h4>Incluye:</h4>
+        <ul>
+            <li><p>Registro e ingreso de usuario.</p></li>
+            <li><p>Creación y edición de clases.</p></li>
+            <li><p>Invitación a clases por medio de código generado en la base de datos.</p></li>
+            <li><p>Creación y modificación de juegos según su estilo.</p></li>
+            <li><p>Juego estilo múltiple Choice.</p></li>
+        </ul>
+
+        <br><br>
+        <!-- Galería de imágenes -->
+        <h2>Galería del Proyecto</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/0VBcnr4b/hati1.jpg" alt="hati1" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/5wNksYd/hati2.jpg" alt="hati2" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/FbMRJL1S/hati3.jpg" alt="hati3" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/4wCkYrPB/hati4.jpg" alt="hati4" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/Q3wh4x2b/hati6.jpg" alt="hati6" border="0">
+            </div>
+        </div>
+
+        <!-- Modal para imágenes en pantalla completa -->
+        <div class="modal">
+            <span class="modal-close">&times;</span>
+            <img src="" alt="Imagen en pantalla completa">
+        </div>
+
+        <br><br>
+        <!-- Tecnologías -->
+        <h2>Tecnologías Utilizadas</h2>
+        <div class="technologies">
+            <span class="skill-tag flet">    <img src="https://flet.dev/img/logo.svg" alt="Flet"> Flet </span>
+            <span class="skill-tag python"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag mysql"><i class="fas fa-database"></i> MySQL</span>
+        </div>
+
+    </main>
+
+    <script>
+        const modal = document.querySelector('.modal');
+        const modalImg = modal.querySelector('img');
+        const closeModal = document.querySelector('.modal-close');
+
+        // Abrir modal al hacer clic en una imagen
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.getAttribute('src');
+                modal.classList.add('active');
+            });
+        });
+
+        // Cerrar modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Cerrar modal al hacer clic fuera de la imagen
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
